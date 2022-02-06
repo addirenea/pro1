@@ -51,11 +51,14 @@ void print_line(char *pid, int depth) {
     fclose(cf);
 
     // loop through and call print_line on all children via recursion
-    char *chi_save;
-    char* chi_token = strtok_r(chi_file, " ", &chi_save);
-    while (chi_token != NULL) {
-        print_line(chi_token, depth + 1);
-        chi_token = strtok_r(NULL, " ", &chi_save);
+    if (chi_file == NULL) {
+    	printf("chi_file: No such file. \n");
+    } else {
+        char *chi_save;
+        char* chi_token = strtok_r(chi_file, " ", &chi_save);
+        while (chi_token != NULL) {
+            print_line(chi_token, depth + 1);
+            chi_token = strtok_r(NULL, " ", &chi_save);
     	}
     }
 
