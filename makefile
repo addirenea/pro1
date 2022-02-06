@@ -1,9 +1,11 @@
-TARGETS = tree
 
-all: $(TARGETS)
+all: tree
 
 clean:
-	rm $(TARGETS)
+	rm tree
 
-%: %.c
-	gcc -Wall -g -o $@ $<
+tree: tree.c
+	gcc -Wall -g tree.c -o tree
+
+run:
+	./tree
