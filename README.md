@@ -6,4 +6,4 @@ Create a C file that reads processes from the /proc file system and output to te
 
 ### How to Run:
 From command line, call `make` to compile the program.
-Then, call `run` to run the program.
+Then, call `make run` to run the program.
